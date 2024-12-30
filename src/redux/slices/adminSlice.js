@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const today = new Date().toISOString().split("T")[0];
+
 const adminSlice = createSlice({
 
     name : 'admin',
@@ -19,9 +21,9 @@ const adminSlice = createSlice({
                     { type : "Phone Call", date : "2024-11-25", comment : "Interacted with their Team Leaders" },
                     { type : "Email", date : "2024-12-18", comment : "Discussed partnership opportunities." },
                     { type : "LinkedIn Message", date : "2024-12-7", comment : "Discussed about the Product" },
-                    { type : "Other", date : "2024-10-30" }
+                    { type : "Other", date : "2024-10-30", comment : "Partnership Advantages" }
                 ],
-                nextCommunication : { type : "Email", date : "2024-12-20" },
+                nextCommunication : { type : "Email", date : "2024-12-29" },
             },
             {
                 name : "Google",
@@ -33,12 +35,13 @@ const adminSlice = createSlice({
                 communicationperiodicity : "Every 4 weeks",
                 communications : [
                     { type : "Email", date : "2024-12-05", comment : "Discussed partnership opportunities." },
-                    { type : "Phone Call", date : "2024-12-15"},
+                    { type : "Phone Call", date : "2024-12-15", comment : "Project discussion"},
                     { type : "LinkedIn Post", date : "2024-11-01", comment : "Interacted with their Team Leaders."  },
                     { type : "LinkedIn Message", date : "2024-11-25", comment : "Successful post about new product launch." },
                     { type : "Other", date: "2024-12-1", comment : "Queried about the Company Insights" }
                 ],
-                nextCommunication : { type : "LinkedIn Post", date : "2024-12-26" },
+                today: today,
+                nextCommunication : { type : "LinkedIn Post", date : today },
             },
         ],
         communicationMethods : [

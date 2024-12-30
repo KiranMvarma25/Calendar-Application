@@ -14,6 +14,7 @@ function CalendarView(){
   const [selectedCompany, setSelectedCompany] = useState(null); 
   const [newCommunication, setNewCommunication] = useState({ date : "", type : "" });
 
+  console.log(companyData);
   
   const formatCommunications = (companyData) => {
 
@@ -27,7 +28,7 @@ function CalendarView(){
         pastComms.forEach(comm => {
           const commDate = dayjs(comm.date).format('YYYY-MM-DD');
           events.push({
-            title : `${comm.type} - ${comm.comment || ""}`,
+            title : `${company.name} - ${comm.type} - ${comm.comment || ""}`,
             date : commDate,
             color : "#FF9F00",
             description : `Past Communication - ${comm.type} on ${commDate}`,
@@ -44,7 +45,7 @@ function CalendarView(){
       if(nextCommunication && nextCommunication.date){
         const nextCommDate = dayjs(nextCommunication.date).format('YYYY-MM-DD');
         events.push({
-          title : `${nextCommunication.type} - ${company.name}`,
+          title : ` - ${company.name} - ${nextCommunication.type}`,
           date : nextCommDate,
           color : "#28A745",
           description : `Upcoming Communication - ${nextCommunication.type} scheduled for ${nextCommDate}`,
@@ -126,16 +127,19 @@ function CalendarView(){
             
           </select>
 
+          <br />
+          <br />
+
           <button className="addCommunicationButton" onClick={handleAddCommunication}>Add Communication</button>
         </div>
 
         <div>
           {selectedEvent && (
             <div className="eventDetails">
-              <h4>Event Details :</h4>
+              <h4>Event Details -</h4>
               <p><strong>Title :</strong> {selectedEvent.title}</p>
               <p><strong>Description :</strong> {selectedEvent.extendedProps.description}</p>
-              <p><strong>Start Date :</strong> {selectedEvent.start.toISOString()}</p>
+              <p><strong>Start Date :</strong> {selectedEvent.start.toISOString().split("T")[0]}</p>
             </div>
           )}
         </div>

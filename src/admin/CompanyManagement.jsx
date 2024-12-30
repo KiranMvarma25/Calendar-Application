@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { addCompany } from "../redux/slices/adminSlice";
 import { CommunicationMethodManagement, CompanyDetails } from "./CommunicationMethodManagement";
 import { Link } from "react-router-dom";
+import { BsBuildingAdd } from "react-icons/bs";
+import { MdDashboard } from "react-icons/md";
 
 function CompanyManagement() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -53,10 +55,10 @@ function CompanyManagement() {
     <>
       <CompanyDetails />
       <br />
-      <button className="addCompanyButton" onClick={handleOpenModal}>Add Company</button>
+      <button className="addCompanyButton" onClick={handleOpenModal}><p className="reactIcons">Add Company <BsBuildingAdd /></p></button>
       <br />
       <br />
-      <Link className="dashboardLink" to='/user'>Dashboard</Link>
+      <Link className="dashboardLink" to='/user'>Dashboard <MdDashboard /></Link>
       <br />
       <br />
 

@@ -18,12 +18,12 @@ function Notifications(){
                 const commDate = new Date(nextCommunication.date);
                 const formattedCommDate = commDate.toISOString().split('T')[0];
 
-                if(formattedCommDate < today) 
+                if(formattedCommDate < today)  
                     overdue.push(company);
                 
-                else if (formattedCommDate === today) 
+                else if (formattedCommDate === today)
                     dueToday.push(company);
-                
+
             }
         });
 
@@ -33,11 +33,13 @@ function Notifications(){
 
     const { overdue, dueToday } = categorizeCommunications(notificationCompany);
 
+    const notificationCount = overdue.length + dueToday.length;
+
     return (
         <>
             <h2 className="notificationsHeading">
-                Notifications 
-                <span> ({overdue.length + dueToday.length})</span>
+                <span className="bell-icon">Notifications 🔔</span>
+                {notificationCount > 0 && <span className="badge">{notificationCount}</span>}
             </h2>
             
             <br />
@@ -48,7 +50,8 @@ function Notifications(){
 
                     <h3>Overdue Communications</h3>
                     <br />
-                    {overdue.length > 0 ? (
+                    {   
+                        overdue.length > 0 ? (
                         overdue.map((company, index) => (
                             <div key={index}>
                                 <p><strong>Company :</strong> {company.name}</p>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCompany, editCompany } from "../redux/slices/adminSlice";
+import { BiSolidEditAlt } from "react-icons/bi";
+import { RiDeleteBin2Line } from "react-icons/ri";
 
 function EditCompanyModal({ isOpen, onClose, companyData, onSave }){
 
@@ -119,8 +121,8 @@ export function CompanyDetails(){
                 <td>{data.comments}</td>
                 <td>{data.communicationperiodicity}</td>
                 <td>
-                    <button className="deleteedit" onClick={() => handleEditCompany(index)}>Edit</button>
-                    <button className="deleteedit" onClick={() => handleDeleteCompany(index)}>Delete</button>
+                    <button className="deleteedit" onClick={() => handleEditCompany(index)}><p className="reactIcons">Edit <BiSolidEditAlt /></p></button>
+                    <button className="deleteedit" onClick={() => handleDeleteCompany(index)}><p className="reactIcons">Delete <RiDeleteBin2Line /></p></button>
                 </td>
               </tr>
 

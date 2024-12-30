@@ -74,6 +74,8 @@
 
 .companiesDataHeading{
     text-align: center;
+    background-color: #007bff;
+    padding: 16px;
 }
 
 
@@ -296,10 +298,15 @@ a{
 .notifications{
     border: 2px solid black;
     padding: 10px;
+    border-radius: 10px;
 }
 
 .notificationsHeading{
     text-align: center;
+    background-color: rgb(61, 162, 225);
+    border-radius: 10px;
+    color: white;
+    padding: 7px 0px;
 }
 
 .notificationsParent{
@@ -509,4 +516,17 @@ a{
   
 .addCommunicationButton:hover{
     background-color: #0056b3;
+}
+
+.badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 1px 7px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.reactIcons{
+    font-size: larger;
 }

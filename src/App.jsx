@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { IoLogIn } from "react-icons/io5";
 
 function App(){
 
@@ -63,7 +64,7 @@ function App(){
             <br />
             <br />
 
-            <button className="loginButtons" type="submit">Log In</button>
+            <button className="loginButtons" type="submit"><p className="reactIcons">Log In <IoLogIn /></p></button>
           
           </form>
 
@@ -87,7 +88,7 @@ function App(){
             <br />
             <br />
 
-            <button className="loginButtons" type="submit">Log In</button>
+            <button className="loginButtons" type="submit"><p className="reactIcons">Log In <IoLogIn /></p></button>
 
           </form>
 
