@@ -1,0 +1,512 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+  
+/* body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}   */
+  
+.parent{
+    border: 0px solid black;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+  
+.adminForm{
+    border: 0px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    background-color:#66acf7;
+}
+  
+.userForm{
+    border: 0px solid red;
+    padding: 20px;
+    border-radius: 10px;
+    background-color:#66acf7;
+}
+
+.headings{
+    text-align: center;
+    background-color: #2980dc;
+    color: white;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.inputField{
+    width: 350px;
+    padding: 3px;
+    border-radius: 7px;
+    font-size: large;
+    margin-top: 7PX;
+    border: 1px solid #9f9797;
+}
+
+.inputLabel{
+    font-size: larger;
+    font-weight: 700;
+}
+
+.loginButtons{
+    padding: 7px;
+    font-size: medium;
+    font-weight: 700;
+    border-radius: 7px;
+    color: white;
+    background-color: #1c81ed;
+    cursor: pointer;
+}
+
+.loginButtons:hover{
+    background-color: #0056b3;
+    font-style: oblique;
+}
+
+
+
+
+.companiesDataHeading{
+    text-align: center;
+}
+
+
+.table{
+    width: 95%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.thead{
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    font-size: larger;
+}
+
+.trInthead{
+    padding: 25px 15px;
+    font-weight: 1000;
+}
+
+.tbody{
+    background-color: aliceblue;
+}
+
+.tdIntbody{
+    padding: 15px;
+}
+
+a{
+    text-decoration: none;
+}
+
+.deleteedit{
+    margin: 10px;
+    padding: 6px 3px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteedit:hover{
+    background-color:gray;
+    color:white;
+}
+
+
+.addCompanyButton{
+    padding: 7px 14px;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 10px;
+    margin-left: 50px;
+    cursor: pointer;
+    background-color:#3583d6;
+    color: white;
+}
+
+.addCompanyButton:hover{
+    background-color: #007bff;
+    font-style: oblique;
+}
+
+.modal-addcompany{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.addcompany{
+    background: white;
+    padding: 20px;
+    border-radius: 7px;
+    width: 50%;
+}
+  
+.addcompany h2{
+    text-align: center;
+}
+  
+.addcompany button{
+    margin: 10px 5px;
+    padding: 7px 10px;
+    font-size: large;
+    font-weight: 700;
+    border-radius: 7px;
+    cursor: pointer;
+    background-color: #44a9d7;
+    color: whitesmoke;
+}
+
+.addcompany button:hover{
+    background-color: #006da0;
+    font-style: oblique;
+}
+  
+.addcompany form label{
+    font-size: large;
+    margin-left: 1px;
+}
+  
+.addcompany form input{
+    width: 100%;
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 17px;
+    border: 1px solid #9f9797;
+    border-radius: 7px;
+    font-size: medium;
+}
+
+.communicationMethodsHeading{
+    text-align: center;
+}
+
+.dashboardLink{
+    text-decoration: none;
+    margin-left: 50px;
+    font-size: x-large;
+    background-color: #007bff;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.dashboardLink:hover{
+    background-color: #0361c5;
+}
+
+.table2{
+    width: 50%;
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.thead2{
+    background-color: rgb(47, 47, 170);
+    color: white;
+    font-size: larger;
+}
+
+.trInthead2{
+    padding: 15px 5px;
+    font-weight: 700;
+}
+
+.tbody2{
+    background-color: rgb(243, 245, 248);
+}
+
+.tdIntbody2{
+    padding: 5px;
+}
+
+.deleteedit{
+    margin: 10px;
+    padding: 6px 3px;
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.deleteedit:hover{
+    background-color:gray;
+    color:white;
+}
+
+
+
+
+
+
+
+
+.dashboardHeading{
+    text-align: center;
+    border: 0px solid black;
+    padding: 10px;
+    background-color: #0bb1fe;
+}
+
+.navbar{
+    border: 0px solid black;
+    background-color: #0bb1fe;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 10px;
+}
+
+.navbarLinks{
+    border: 0px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: black;
+}
+
+.navbarLinks:hover{
+    /* background-color: #1599d6; */
+    background-color:#0094d9;
+}
+
+.meetingsandnotifications{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.notifications{
+    border: 2px solid black;
+    padding: 10px;
+}
+
+.notificationsHeading{
+    text-align: center;
+}
+
+.notificationsParent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 500px;
+}
+
+
+
+.table3{
+    border-collapse: collapse;
+    margin: auto;
+}
+
+.thead3{
+    background-color:cornflowerblue;
+    color: white;
+    font-size: larger;
+}
+
+.trInthead3{
+    padding: 15px 5px;
+    font-weight: 700;
+}
+
+.tbody3{
+    background-color: rgb(243, 245, 248);
+}
+
+.tdIntbody3{
+    padding: 5px;
+}
+  
+
+
+  
+.tooltip-container{
+    position: relative;
+}
+  
+.tooltip-container:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+  
+.red{
+    background-color: #f8d7da;
+}
+  
+.yellow{
+    background-color: #fff3cd;
+}
+  
+.communication-item{
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+}
+  
+.communication-item:hover::after{
+    content: attr(data-tip);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+    background-color: #f9f9f9;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  
+  
+.modal{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+  
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+  
+.modal h2{
+    margin-bottom: 20px;
+}
+  
+.modal form div{
+    margin-bottom: 15px;
+}
+  
+.modal form div label{
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.modal form div input,
+.modal form div select,
+.modal form div textarea{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+.modal form button{
+    margin-right: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+}
+  
+.modal form button:hover{
+    background-color: #0056b3;
+}
+
+.calendarParent{
+    margin: auto;
+    padding: 20px;
+    border-radius: 7px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+  
+.calendarHeader{
+    text-align: center;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 20px;
+}
+  
+.calendar{
+    border: 2px solid rgb(27, 29, 30);
+    border-radius: 7px;
+    overflow: hidden;
+    padding: 7px;
+    width: 700px;
+    background-color: rgba(222, 228, 231, 0.266);
+}
+  
+.eventDetails{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+  
+.event-details h4{
+    margin-bottom: 10px;
+    color: #444;
+}
+  
+.addCommunication{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+  
+.addCommunication h4{
+    margin-bottom: 10px;
+}
+  
+.inputSelect,.inputDate{
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+  
+.addCommunicationButton{
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+.addCommunicationButton:hover{
+    background-color: #0056b3;
+}
