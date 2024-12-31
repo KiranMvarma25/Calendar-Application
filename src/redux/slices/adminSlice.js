@@ -17,13 +17,13 @@ const adminSlice = createSlice({
                 comments : "ENTNT is a complete workforce solutions provider.",
                 communicationperiodicity : "Every 2 weeks",
                 communications : [
-                    { type : "LinkedIn Post", date : "2024-12-10", comment : "Successful post about new product launch." },
-                    { type : "Phone Call", date : "2024-11-25", comment : "Interacted with their Team Leaders" },
-                    { type : "Email", date : "2024-12-18", comment : "Discussed partnership opportunities." },
-                    { type : "LinkedIn Message", date : "2024-12-7", comment : "Discussed about the Product" },
-                    { type : "Other", date : "2024-10-30", comment : "Partnership Advantages" }
+                    { type : "LinkedIn Post", date : "2024-11-01", comment : "Successful post about new product launch." },
+                    { type : "LinkedIn Message", date : "2024-11-15", comment : "Interacted with their Team Leaders." },
+                    { type : "Email", date : "2024-11-19", comment : "Discussed partnership opportunities." },
+                    { type : "Phone Call", date : "2024-12-02", comment : "Discussed about the Product." },
+                    { type : "Other", date : "2024-12-16", comment : "Partnership Advantages." }
                 ],
-                nextCommunication : { type : "Email", date : "2024-12-29" },
+                nextCommunication : { type : "LinkedIn Post", date : "2024-12-30" },
             },
             {
                 name : "Google",
@@ -34,11 +34,11 @@ const adminSlice = createSlice({
                 comments : "Google is a corporation that specializes in online services.",
                 communicationperiodicity : "Every 4 weeks",
                 communications : [
-                    { type : "Email", date : "2024-12-05", comment : "Discussed partnership opportunities." },
-                    { type : "Phone Call", date : "2024-12-15", comment : "Project discussion"},
-                    { type : "LinkedIn Post", date : "2024-11-01", comment : "Interacted with their Team Leaders."  },
-                    { type : "LinkedIn Message", date : "2024-11-25", comment : "Successful post about new product launch." },
-                    { type : "Other", date: "2024-12-1", comment : "Queried about the Company Insights" }
+                    { type : "LinkedIn Post", date : "2024-08-09", comment : "Discussed partnership opportunities." },
+                    { type : "LinkedIn Message", date : "2024-09-10", comment : "Project discussion." },
+                    { type : "Email", date : "2024-10-08", comment : "Interacted with their Team Leaders." },
+                    { type : "Phone Call", date : "2024-11-05", comment : "Successful post about new product launch." },
+                    { type : "Other", date: "2024-12-03", comment : "Queried about the Company Insights." }
                 ],
                 today: today,
                 nextCommunication : { type : "LinkedIn Post", date : today },
@@ -55,10 +55,13 @@ const adminSlice = createSlice({
 
 
     reducers : {
-        
+
         addCompany : (state, action) => {
-            state.companyData.push(action.payload);
-        },
+            const newCompany = action.payload;
+            const today = new Date().toISOString().split("T")[0];
+            newCompany.nextCommunication = { type : "LinkedIn Post", date : today }; 
+            state.companyData.push(newCompany);
+        },  
         
         deleteCompany : (state, action) => {
             state.companyData.splice(action.payload, 1);
@@ -83,26 +86,43 @@ const adminSlice = createSlice({
             if(state.communicationMethods[index]) 
                 state.communicationMethods[index] = updatedData;
         },
-        
+
         logCommunication: (state, action) => {
+
             const { companyName, communication } = action.payload;
             const companyIndex = state.companyData.findIndex(company => company.name === companyName);
-      
+        
             if(companyIndex !== -1){
-              
-              if(!state.companyData[companyIndex].communications) 
-                state.companyData[companyIndex].communications = [];
-      
-              state.companyData[companyIndex].communications.push(communication);
-      
-              if(communication.date){
-                state.companyData[companyIndex].nextCommunication = {
-                  type : communication.type,
-                  date : communication.date,
+               
+                const company = state.companyData[companyIndex];
+                
+                if(!company.communications)
+                    company.communications = [];
+                
+                company.communications.push(communication);
+
+                const currentDate = new Date(communication.date);
+                const periodicityDays = {
+                    "Every 1 week" : 7,
+                    "Every 2 weeks" : 14,
+                    "Every 3 weeks" : 21,
+                    "Every 4 weeks" : 28,
                 };
-              }
+        
+                const periodicity = periodicityDays[company.communicationperiodicity] || 14; 
+                const nextDate = new Date(currentDate)
+                nextDate.setDate(currentDate.getDate() + periodicity);
+        
+                const currentMethodIndex = state.communicationMethods.findIndex(method => method.name === communication.type);
+                const nextMethodIndex = (currentMethodIndex + 1) % state.communicationMethods.length;
+                const nextMethod = state.communicationMethods[nextMethodIndex]
+        
+                company.nextCommunication = {
+                    type : nextMethod.name,
+                    date : nextDate.toISOString().split("T")[0],
+                };
             }
-        }
+        },
         
     }
 })

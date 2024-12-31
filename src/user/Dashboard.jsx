@@ -162,9 +162,9 @@ function Dashboard() {
                             <select value={communicationDetails.type} onChange={e => setCommunicationDetails({ ...communicationDetails, type : e.target.value })}>
                                 <option value="">Select</option>
                                 <option value="LinkedIn Post">LinkedIn Post</option>
+                                <option value="LinkedIn Message">LinkedIn Message</option>
                                 <option value="Email">Email</option>
                                 <option value="Phone Call">Phone Call</option>
-                                <option value="LinkedIn Message">LinkedIn Message</option>
                                 <option value="Other">Other</option>
                             </select>
                         </div>

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { AiOutlineInteraction } from "react-icons/ai";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaChartSimple } from "react-icons/fa6";
@@ -6,9 +6,9 @@ import { FaChartSimple } from "react-icons/fa6";
 function Navbar(){
     return (
         <div className="navbar">
-            <Link to="/user"><h2 className="navbarLinks">Meetings <AiOutlineInteraction /></h2></Link>
-            <Link to="calender"><h2 className="navbarLinks">Calender <FaCalendarAlt /></h2></Link>
-            <Link to="analytics"><h2 className="navbarLinks">Analytics <FaChartSimple /></h2></Link>            
+            <NavLink to="/user" className="navbarLinks"><h2 >Meetings <AiOutlineInteraction /></h2></NavLink>
+            <NavLink to="calender" className="navbarLinks" ><h2>Calender <FaCalendarAlt /></h2></NavLink>
+            <NavLink to="analytics" className="navbarLinks"><h2>Analytics <FaChartSimple /></h2></NavLink>            
         </div>
     )
 }

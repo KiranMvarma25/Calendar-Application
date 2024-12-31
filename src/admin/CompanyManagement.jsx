@@ -98,8 +98,14 @@ function CompanyManagement() {
               <input type="text" value={formData.comments} id="comments" name="comments" onChange={handleChange} />
               <br />
 
-              <label htmlFor="communicationperiodicity">Communication Periodicity</label>
-              <input type="text" value={formData.communicationperiodicity} id="communicationperiodicity" name="communicationperiodicity" onChange={handleChange} required />
+              <label htmlFor="communicationperiodicity">Communication Periodicity </label>
+              <select value={formData.communicationperiodicity} id="communicationperiodicity" name="communicationperiodicity" onChange={handleChange} required >
+                  <option value="">Select Periodicity</option>
+                  <option value="Every 1 week">Every 1 week</option>
+                  <option value="Every 2 weeks">Every 2 weeks</option>
+                  <option value="Every 3 weeks">Every 3 weeks</option>
+                  <option value="Every 4 weeks">Every 4 weeks</option>
+              </select>
               <br />
 
               <button type="submit">Add</button>

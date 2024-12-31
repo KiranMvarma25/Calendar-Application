@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteCompany, editCompany } from "../redux/slices/adminSlice";
+import { deleteCompany, editCompany, editCommunicationMethod, deleteCommunicationMethod } from "../redux/slices/adminSlice";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { RiDeleteBin2Line } from "react-icons/ri";
 
