@@ -99,7 +99,7 @@ function CompanyManagement() {
               <br />
 
               <label htmlFor="communicationperiodicity">Communication Periodicity </label>
-              <select value={formData.communicationperiodicity} id="communicationperiodicity" name="communicationperiodicity" onChange={handleChange} required >
+              <select className="commperiod" value={formData.communicationperiodicity} id="communicationperiodicity" name="communicationperiodicity" onChange={handleChange} required >
                   <option value="">Select Periodicity</option>
                   <option value="Every 1 week">Every 1 week</option>
                   <option value="Every 2 weeks">Every 2 weeks</option>

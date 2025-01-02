@@ -105,7 +105,7 @@ function CalendarView(){
 
         <div className="addCommunication">
           
-          <h4>Add Communication</h4>
+          <h4>Manage Communication</h4>
 
           <select className="inputSelect" value={selectedCompany || ""} onChange={(e) => setSelectedCompany(e.target.value)}>
 
@@ -130,7 +130,7 @@ function CalendarView(){
           <br />
           <br />
 
-          <button className="addCommunicationButton" onClick={handleAddCommunication}>Add Communication</button>
+          <button className="addCommunicationButton" onClick={handleAddCommunication}>Manage Communication</button>
         </div>
 
         <div>

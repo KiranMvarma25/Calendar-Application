@@ -1,8 +1,12 @@
+import BarGraph from "./BarGraph";
+import PdfReports from "./PdfReports";
+
 function Analytics(){
     return (
-        <>
-            <h1>Hello I'm Analytics</h1>
-        </>
+        <div className="analyticsParent">
+            <BarGraph />
+            <PdfReports />
+        </div>
     )
 }
 

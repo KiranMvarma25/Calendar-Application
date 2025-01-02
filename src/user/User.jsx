@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 function User(){
     return (
         <>
-            <h1 className="dashboardHeading">Dashboard</h1>
+            {/* <h1 className="dashboardHeading">Dashboard</h1> */}
             <Navbar />
             <br />
             <Outlet />

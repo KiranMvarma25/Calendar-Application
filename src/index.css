@@ -4,10 +4,10 @@
     margin: 0%;
 }
   
-/* body{
+body{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-}   */
+    /* font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  */
+}  
   
 .parent{
     border: 0px solid black;
@@ -74,7 +74,9 @@
 
 .companiesDataHeading{
     text-align: center;
-    background-color: #007bff;
+    /* background-color: #007bff; */
+    background-color: #5AB2FF;
+    /* color: whitesmoke; */
     padding: 16px;
 }
 
@@ -83,11 +85,14 @@
     width: 95%;
     border-collapse: collapse;
     margin: auto;
+    border: 2px solid black;
+    /* border: 0px; */
 }
 
 .thead{
-    background-color: blue;
-    color: white;
+    /* background-color: blue; */
+    background-color: #A0DEFF;
+    /* color: white; */
     padding: 10px;
     font-size: larger;
 }
@@ -98,7 +103,9 @@
 }
 
 .tbody{
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
+    /* background-color: #fefefe; */
+    background-color: #DFF5FF;
 }
 
 .tdIntbody{
@@ -115,6 +122,7 @@ a{
     font-weight: 700;
     border-radius: 5px;
     cursor: pointer;
+    background-color: #378CE7;
 }
 
 .deleteedit:hover{
@@ -197,6 +205,13 @@ a{
     text-align: center;
 }
 
+.commperiod{
+    padding: 5px;
+    border-radius: 5px;
+    /* font-size: medium; */
+    font-weight: 600;
+}
+
 .dashboardLink{
     text-decoration: none;
     margin-left: 50px;
@@ -220,8 +235,9 @@ a{
 }
 
 .thead2{
-    background-color: rgb(47, 47, 170);
-    color: white;
+    /* background-color: rgb(60, 60, 221); */
+    background-color: #82b4e9;
+    /* color: white; */
     font-size: larger;
 }
 
@@ -275,7 +291,7 @@ a{
     padding: 10px;
 }
 
-.navbarLinks{
+.navbarLink{
     border: 0px solid red;
     padding: 10px;
     border-radius: 5px;
@@ -284,8 +300,25 @@ a{
     text-decoration: none;
 }
 
+.navbarLink:hover{
+    background-color:#0094d9;
+}
+
+.navbarLinks{
+    border: 0px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: black;
+    /* text-decoration: none; */
+}
+
 .navbarLinks:hover{
     background-color:#0094d9;
+}
+
+.navbarLinks.active{
+    text-decoration: underline;
 }
 
 .meetingsandnotifications{
@@ -324,7 +357,8 @@ a{
 }
 
 .thead3{
-    background-color:cornflowerblue;
+    /* background-color:cornflowerblue; */
+    background-color: #378CE7;
     color: white;
     font-size: larger;
 }
@@ -466,6 +500,7 @@ a{
     padding: 7px;
     width: 650px;
     background-color: rgba(222, 228, 231, 0.266);
+    background-color: #eff4f6;
 }
   
 .eventDetails{
@@ -535,43 +570,41 @@ a{
 
 
 
-/* Analytics.css */
 
-/* General container styling */
 .analytics-container {
     font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    width: 700px;
+    /* margin: 0 auto; */
+    padding: 16px;
     background-color: #f9f9f9;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Title styling */
-.analytics-container h1 {
+
+.analytics-container h2 {
     text-align: center;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
 }
 
-/* Filter section styling */
+
 .filter-section {
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-bottom: 30px;
+    gap: 10px;
+    /* margin-bottom: 30px; */
 }
 
 .filter-section label {
     font-weight: bold;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
 }
 
 .filter-section select,
 .filter-section input[type="date"] {
     width: 100%;
-    padding: 10px;
+    padding: 7px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
@@ -586,24 +619,24 @@ a{
     border-color: #007bff;
 }
 
-/* Chart area styling */
+
 .chart-container {
-    margin-top: 30px;
-    padding: 20px;
+    margin-top: 10px;
+    padding: 10px;
     background-color: #fff;
     border-radius: 8px;
     border: 1px solid #eee;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Chart responsive styles */
+
 .chart-container canvas {
     display: block;
     width: 100%;
     height: auto;
 }
 
-/* Utility styles */
+
 button {
     padding: 10px 15px;
     border: none;
@@ -616,5 +649,44 @@ button {
 }
 
 button:hover {
+    background-color: #0056b3;
+}
+
+
+.analyticsParent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+
+.pdfReports{
+    text-align: center;
+}
+
+.pdfReportsHeading{
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.pdfReportsButtons{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.pdfReportsButtonsBtn{
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.pdfReportsButtonsBtn:hover{
     background-color: #0056b3;
 }
