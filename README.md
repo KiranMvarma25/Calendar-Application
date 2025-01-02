@@ -38,6 +38,9 @@ Table of Contents -
 3. Access the deployed application : 
 
 After deployment, application is live at https://admirable-boba-f8e494.netlify.app/ from the Netlify.
+    
+    Admin Credentials - Admin, companyadmin123
+    User Credentials - User, companyuser123
 
 
 4. Known Limitations : 
