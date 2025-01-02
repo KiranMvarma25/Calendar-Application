@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteCompany, editCompany, editCommunicationMethod, deleteCommunicationMethod } from "../redux/slices/adminSlice";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 function EditCompanyModal({ isOpen, onClose, companyData, onSave }){
 
@@ -16,6 +17,7 @@ function EditCompanyModal({ isOpen, onClose, companyData, onSave }){
   function handleSave() {
     onSave(formData);
     onClose();
+    toast.success("Edited Details Succesfully");
   }
 
   if(!isOpen) 
@@ -89,9 +91,10 @@ export function CompanyDetails(){
 
   return (
     <>
-      <h1 className="companiesDataHeading">Companies Data</h1>
+      {/* <h1 className="companiesDataHeading">Companies Data</h1> */}
       <br />
       {companyData.length > 0 ? (
+        <div className="tableContainer">
         <table border="3" className="table">
 
           <thead align="center">
@@ -130,6 +133,7 @@ export function CompanyDetails(){
           </tbody>
 
         </table>
+        </div>
 
       ) : (
 
@@ -181,6 +185,8 @@ export function CommunicationMethodManagement(){
     return (
         <>
             <h2 className="communicationMethodsHeading">Communication Methods</h2>
+
+            <br />
 
             <table border="3" className="table2">
 

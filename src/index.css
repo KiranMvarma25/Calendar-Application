@@ -80,9 +80,43 @@ body{
     padding: 16px;
 }
 
+.addCompanyDashboardParent{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.tableContainer{
+    max-height: 500px;
+    overflow-y: scroll;
+    margin: auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tableContainer::-webkit-scrollbar{
+    width: 10px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb{
+    background-color: #378CE7;
+    border-radius: 5px;
+}
+
+.tableContainer::-webkit-scrollbar-thumb:hover{
+    background-color: #005bb5;
+}
+
+.tableContainer::-webkit-scrollbar-track{
+    background-color: #f0f0f0; 
+    border-radius: 5px;
+}
 
 .table{
-    width: 95%;
+    /* width: 95%; */
+    width: 100%;
     border-collapse: collapse;
     margin: auto;
     border: 2px solid black;
@@ -558,12 +592,16 @@ a{
     color: white;
     border-radius: 50%;
     padding: 1px 7px;
-    font-size: larger;
+    font-size: large;
     font-weight: bold;
 }
 
 .reactIcons{
     font-size: larger;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -689,4 +727,30 @@ button:hover {
 
 .pdfReportsButtonsBtn:hover{
     background-color: #0056b3;
+}
+
+.notFoundParent{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 250px;
+    text-align: center;
+}
+
+.notFound{
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: 250px;
+}
+
+.notFoundTwo{
+    background-color: red;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    width: 400px;
 }

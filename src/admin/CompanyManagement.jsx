@@ -5,6 +5,7 @@ import { CommunicationMethodManagement, CompanyDetails } from "./CommunicationMe
 import { Link } from "react-router-dom";
 import { BsBuildingAdd } from "react-icons/bs";
 import { MdDashboard } from "react-icons/md";
+import { toast } from "react-toastify";
 
 function CompanyManagement() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -49,16 +50,23 @@ function CompanyManagement() {
       communicationperiodicity : "",
     });
     handleCloseModal();
+    toast.success("Added New Company Details Successfully");
   }
 
   return (
     <>
+      <h1 className="companiesDataHeading">Companies Data</h1>
+      
       <CompanyDetails />
+
       <br />
-      <button className="addCompanyButton" onClick={handleOpenModal}><p className="reactIcons">Add Company <BsBuildingAdd /></p></button>
       <br />
-      <br />
-      <Link className="dashboardLink" to='/user'>Dashboard <MdDashboard /></Link>
+      
+      <div className="addCompanyDashboardParent">  
+        <button className="addCompanyButton" onClick={handleOpenModal}><p className="reactIcons">Add Company <BsBuildingAdd /></p></button>
+        <Link className="dashboardLink" to='/user'>Dashboard <MdDashboard /></Link>
+      </div>
+      
       <br />
       <br />
 
@@ -116,6 +124,8 @@ function CompanyManagement() {
 
         </div>
       )}
+
+      <br />
 
       <CommunicationMethodManagement />
 

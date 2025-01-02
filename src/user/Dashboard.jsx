@@ -4,6 +4,7 @@ import Modal from 'react-modal';
 import { Tooltip } from 'react-tooltip'; 
 import Notifications from './Notifications';
 import { logCommunication } from '../redux/slices/adminSlice';
+import { toast } from 'react-toastify';
 
 Modal.setAppElement('#root'); 
 
@@ -61,7 +62,8 @@ function Dashboard() {
     const handleSubmitCommunication = () => {
 
         if(!communicationDetails.type || !communicationDetails.date){
-            alert('Please fill in all required fields!');
+            // alert('Please fill in all required fields!');
+            toast.info("Please fill in all required fields!");
             return;
         }
 
@@ -88,6 +90,7 @@ function Dashboard() {
         setIsModalOpen(false);
         setSelectedCompanies([]);
         setCommunicationDetails({ type : '', date : '', comment : '' }); 
+        toast.success("Communication Performed Successfully");
     };
 
     return (
@@ -97,6 +100,7 @@ function Dashboard() {
 
                 <button onClick={() => setIsModalOpen(true)} disabled={selectedCompanies.length === 0} style={{ margin: '10px 0', padding: '10px', borderRadius: "5px", backgroundColor: selectedCompanies.length === 0 ? '#ccc' : '#007bff', color: '#fff', cursor: 'pointer' }}>Communication Performed</button>
                 
+                <div className='tableContainer'>
                 <table border="3" className="table3">
                     
                     <thead align="center">
@@ -150,6 +154,7 @@ function Dashboard() {
                     </tbody>
 
                 </table>
+                </div>
 
                 <Modal isOpen={isModalOpen} onRequestClose={() => setIsModalOpen(false)} contentLabel="Log Communication" className="modal" overlayClassName="overlay">
                     

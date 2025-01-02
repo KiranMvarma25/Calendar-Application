@@ -39,7 +39,7 @@ function Notifications(){
         <>
             <h2 className="notificationsHeading">
                 <span className="bell-icon">Notifications 🔔</span>
-                {notificationCount > 0 && <span className="badge">{notificationCount}</span>}
+                {notificationCount > 0 && <sup className="badge">{notificationCount}</sup>}
             </h2>
             
             <br />

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { IoLogIn } from "react-icons/io5";
+import { toast } from "react-toastify";
 
 function App(){
 
@@ -18,7 +19,8 @@ function App(){
       navigate('/admin');
     
     else 
-      alert("Incorrect Admin Details");
+      // alert("Incorrect Admin Details");
+    toast.error("Incorrect Admin Details");
     
   }
 
@@ -36,7 +38,8 @@ function App(){
       navigate('/user');
     
     else 
-      alert("Incorrect User Details");
+      // alert("Incorrect User Details");
+    toast.error("Incorrect User Details");
     
   }
 
@@ -64,7 +67,7 @@ function App(){
             <br />
             <br />
 
-            <button className="loginButtons" type="submit"><p className="reactIcons">Log In <IoLogIn /></p></button>
+            <button className="loginButtons" type="submit"><span className="reactIcons">Log In <IoLogIn /></span></button>
           
           </form>
 

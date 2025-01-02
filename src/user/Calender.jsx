@@ -139,7 +139,7 @@ function CalendarView(){
               <h4>Event Details -</h4>
               <p><strong>Title :</strong> {selectedEvent.title}</p>
               <p><strong>Description :</strong> {selectedEvent.extendedProps.description}</p>
-              <p><strong>Start Date :</strong> {selectedEvent.start.toISOString().split("T")[0]}</p>
+              {/* <p><strong>Start Date :</strong> {selectedEvent.start.toISOString().split("T")[0]}</p> */}
             </div>
           )}
         </div>
