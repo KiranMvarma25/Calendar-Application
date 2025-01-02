@@ -32,7 +32,7 @@ function BarGraph(){
         communicationMethod : '',
     });
 
-    const filterData = () => {
+    const filterData = () => {                              // Function to filter company data based on selected filters
 
         let filtered = companyData;
 
@@ -66,7 +66,7 @@ function BarGraph(){
 
     };
 
-    const getFrequencyData = () => {
+    const getFrequencyData = () => {                        // Getting frequency data after applying the filters
 
         const data = filterData();
 
@@ -83,7 +83,7 @@ function BarGraph(){
 
     const frequency = getFrequencyData();
 
-    const chartData = {
+    const chartData = {                                         // Data for the Bar chart
 
         labels : Object.keys(frequency),
         datasets : [

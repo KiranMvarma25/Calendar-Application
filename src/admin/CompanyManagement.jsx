@@ -29,7 +29,7 @@ function CompanyManagement() {
     setIsModalOpen(false);
   }
 
-  function handleChange(e) {
+  function handleChange(e) {                      // Handle form input changes and update the formData state
     const { name, value } = e.target;
     setFormData(ps => ({
       ...ps,
@@ -37,7 +37,7 @@ function CompanyManagement() {
     }));
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e) {                      // Handle form submission, dispatch the action to add company, and reset the form
     e.preventDefault();
     dispatch(addCompany(formData));
     setFormData({

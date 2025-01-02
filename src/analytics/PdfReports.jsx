@@ -6,7 +6,7 @@ function PdfReports() {
 
     const companyData = useSelector((state) => state.admin.companyData);
 
-    const getFrequencyData = () => {
+    const getFrequencyData = () => {                                // Function to get the frequency of each communication type across all companies
         const frequency = companyData.reduce((acc, company) => {
             company.communications.forEach(comm => {
                 acc[comm.type] = (acc[comm.type] || 0) + 1;
@@ -19,7 +19,7 @@ function PdfReports() {
 
     const frequency = getFrequencyData();
 
-    const styles = StyleSheet.create({
+    const styles = StyleSheet.create({                  // Styles for the PDF document
         page : {
             padding : 20,
         },
@@ -45,7 +45,7 @@ function PdfReports() {
     });
 
     
-    const MyDocument = () => (
+    const MyDocument = () => (                              // PDF document structure and layout
 
         <Document>
 
@@ -74,7 +74,7 @@ function PdfReports() {
 
     );
 
-    const exportToCSV = () => {
+    const exportToCSV = () => {                                     // Function to export frequency data to a CSV file
 
         const csvData = Object.entries(frequency).map(([type, count]) => ({
             "Communication Type" : type,

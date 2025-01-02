@@ -1,23 +1,18 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { createRoot } from 'react-dom/client'                         // To render the React application
+import './index.css'                                                  // Importing CSS file for styling
 import App from './App.jsx'
-import { createBrowserRouter, RouterProvider} from "react-router-dom"
-// import Company from './admin/Company.jsx'
-// import User from './user/User.jsx'
+import { createBrowserRouter, RouterProvider} from "react-router-dom" // For setting up routing in the application
 
-import { Provider } from "react-redux";
-import appStore from "./redux/store.js";
-// import CalendarView from './user/Calender.jsx'
-// import Analytics from './analytics/Analytics.jsx'
-// import Dashboard from './user/Dashboard.jsx'
+import { Provider } from "react-redux";                               // To integrate Redux store with the React app
+import appStore from "./redux/store.js";                              // Importing the Redux store
 
-import { lazy, Suspense } from 'react';
-import NotFound from './NotFound.jsx';
+import { lazy, Suspense } from 'react';                               // For lazy loading components 
+import NotFound from './NotFound.jsx';                                // Component to show when a route is not found
 
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
-const Company = lazy(() => import('./admin/Company.jsx'));
+const Company = lazy(() => import('./admin/Company.jsx'));            // Lazy load components to optimize performance by splitting the code
 const User = lazy(() => import('./user/User.jsx'));
 const CalendarView = lazy(() => import('./user/Calender.jsx'));
 const Analytics = lazy(() => import('./analytics/Analytics.jsx'));
@@ -25,13 +20,13 @@ const Dashboard = lazy(() => import('./user/Dashboard.jsx'));
 
 const appRouter = createBrowserRouter([
   {
-    path : "/",
+    path : "/",                                     // Root path
     element : <App />,
     errorElement : <NotFound />
   },
   {
     path : "/admin",
-    element : <Suspense fallback={<div>Loading Admin Panel...</div>}><Company /></Suspense>,
+    element : <Suspense fallback={<div>Loading Admin Panel...</div>}><Company /></Suspense>,  // Lazy load Company component with fallback loading text
     errorElement : <NotFound />
   },
   {
@@ -60,8 +55,8 @@ const appRouter = createBrowserRouter([
 ])
 
 createRoot(document.getElementById('root')).render(
-  <Provider store={appStore}>
-    <RouterProvider router={appRouter}></RouterProvider>
+  <Provider store={appStore}>                                       {/* Wrapping the application with the Redux provider */}
+    <RouterProvider router={appRouter}></RouterProvider>            {/* Setting up routing using the RouterProvider */}
     <ToastContainer />
   </Provider>
 )

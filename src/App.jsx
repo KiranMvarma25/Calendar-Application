@@ -5,13 +5,13 @@ import { toast } from "react-toastify";
 
 function App(){
 
-  const [adminData, setAdminData] = useState({ name : '', password : '' });
+  const [adminData, setAdminData] = useState({ name : '', password : '' });       // State for admin credentials and input fields
 
-  const adminCredentials = { name : "Admin", password : "companyadmin123" };
+  const adminCredentials = { name : "Admin", password : "companyadmin123" };      // Hardcoded admin credentials for comparison
 
   const navigate = useNavigate();
 
-  function handleClickAdminLogin(e){
+  function handleClickAdminLogin(e){                                              // Handle Admin login on form submission
 
     e.preventDefault();
     
@@ -26,11 +26,11 @@ function App(){
 
   
 
-  const [userData, setUserData] = useState({ name : '', password : '' });
+  const [userData, setUserData] = useState({ name : '', password : '' });         // State for user credentials and input fields
 
-  const userCredentials = { name : "User", password : "companyuser123" };
+  const userCredentials = { name : "User", password : "companyuser123" };         // Hardcoded user credentials for comparison
 
-  function handleClickUserLogin(e){
+  function handleClickUserLogin(e){                                               // Handle User login on form submission
 
     e.preventDefault();
 
@@ -45,7 +45,7 @@ function App(){
 
   return (
       <>
-        <div className="parent">
+        <div className="parent">  {/* Forms for Admin and User Login */}
 
           <form className="adminForm" onSubmit={handleClickAdminLogin}>
             

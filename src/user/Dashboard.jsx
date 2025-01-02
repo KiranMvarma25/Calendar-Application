@@ -13,24 +13,24 @@ function Dashboard() {
     const companyData = useSelector(state => state.admin.companyData);
     // console.log(companyData)
 
-    const [highlightedCompanies, setHighlightedCompanies] = useState({});
+    const [highlightedCompanies, setHighlightedCompanies] = useState({});       // Local state to manage selected companies, highlighted companies and modal open state
     const [selectedCompanies, setSelectedCompanies] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const [communicationDetails, setCommunicationDetails] = useState({
+    const [communicationDetails, setCommunicationDetails] = useState({          // Communication details in the form
         type : '',
         date : '',
         comment : '',
     });
     const dispatch = useDispatch();
 
-    const toggleCompanySelection = (companyName) => {
+    const toggleCompanySelection = (companyName) => {                           // Function to toggle the selection of a company
         setSelectedCompanies(prev =>
             prev.includes(companyName) ? prev.filter(name => name !== companyName) : [...prev, companyName]
         );
     };
 
-    const getHighlight = (nextCommunicationDate, companyId) => {
+    const getHighlight = (nextCommunicationDate, companyId) => {                // Function to get highlight color for a company's next communication date
 
         if(highlightedCompanies[companyId] === false) 
             return ''; 
@@ -87,7 +87,7 @@ function Dashboard() {
         });
 
         
-        setIsModalOpen(false);
+        setIsModalOpen(false);                                                  // Closing the modal and reset the state
         setSelectedCompanies([]);
         setCommunicationDetails({ type : '', date : '', comment : '' }); 
         toast.success("Communication Performed Successfully");
