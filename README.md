@@ -37,7 +37,7 @@ Table of Contents -
 
 3. Access the deployed application : 
 
-After deployment, application is live at the provided url from the Netlify.
+After deployment, application is live at https://admirable-boba-f8e494.netlify.app/ from the Netlify.
 
 
 4. Known Limitations : 
